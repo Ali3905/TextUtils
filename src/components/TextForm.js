@@ -44,16 +44,16 @@ export default function TextForm(props) {
         <div className="mb-3">
             <h1 style={{color: props.Mode==='dark'?'white':'black'}}>Enter text below to Analyze</h1>
             <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" value={text} onChange = {handleChange}
-            style={{color: props.Mode==='dark'?'white':'black',backgroundColor: props.Mode==='dark'?'grey':'white'}}></textarea>
+            style={{color: props.Mode==='dark'?'white':'black',backgroundColor: props.Mode==='dark'?'#272727':'white'}}></textarea>
         </div>
-            <button type="button" className="btn btn-primary" onClick={handleupClick}>Convert to upperCase</button>
-            <button type="button" className="btn btn-primary mx-2" onClick={handleloClick}>Convert to lowerCase</button>
-            <button type="button" className="btn btn-primary mx-2" id = "show"onClick={show}>Show Preview</button>
-            <button type="button" className="btn btn-primary mx-2" id = "hide"onClick={hide} style= {{display:'none', color:"white"}} >Hide Preview</button>
-            <button type="button" className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
+            <button type="button" className="btn btn-primary mx-1 my-1" onClick={handleupClick}>Convert to upperCase</button>
+            <button type="button" className="btn btn-primary mx-1 my-1" onClick={handleloClick}>Convert to lowerCase</button>
+            <button type="button" className="btn btn-primary mx-1 my-1" id = "show"onClick={show}>Show Preview</button>
+            <button type="button" className="btn btn-primary mx-1 my-1" id = "hide"onClick={hide} style= {{display:'none', color:"white"}} >Hide Preview</button>
+            <button type="button" className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text</button>
         <div style={{color: props.Mode==='dark'?'white':'black'}}>
             <h2>Text Summary</h2>
-            {text.split(" ").length} Words and {text.length} Characters
+            {text.split(/\s/).filter((ele)=>{return ele.length !== 0}).length} Words and {text.length} Characters
         </div>
         <div id = "preview" style= {display } >
             <h2>Preview</h2>
