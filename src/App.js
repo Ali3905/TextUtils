@@ -97,7 +97,7 @@ function App() {
     <Alert alert = {alert}/>
     <div className='container'>
     <Routes>
-          <Route exact path="/" element = {<TextForm  Mode = {mode}/> }/>
+          <Route exact path="/TextUtils" element = {<TextForm  Mode = {mode}/> }/>
         </Routes>
     </div>
      </Router> 
